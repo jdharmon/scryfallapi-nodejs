@@ -49,7 +49,7 @@ export interface ImageUri {
  * @member {string} [typeLine]
  * @member {string} [oracleText]
  * @member {string} [manaCost]
- * @member {string} [colors] Possible values include: 'W', 'U', 'B', 'R', 'G'
+ * @member {array} [colors]
  * @member {string} [colorIndicator] Possible values include: 'W', 'U', 'B',
  * 'R', 'G'
  * @member {string} [power]
@@ -70,7 +70,7 @@ export interface CardFace {
   typeLine?: string;
   oracleText?: string;
   manaCost?: string;
-  colors?: string;
+  colors?: string[];
   colorIndicator?: string;
   power?: string;
   toughness?: string;
