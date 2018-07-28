@@ -2,9 +2,9 @@
   "name": "",
   "author": "Microsoft Corporation",
   "description": "ScryfallClient Library with typescript type definitions for node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "ms-rest": "^2.3.2"
+    "ms-rest": "^2.3.3"
   },
   "keywords": [
     "node",
@@ -13,12 +13,12 @@
   "license": "MIT",
   "main": "./lib/scryfallClient.js",
   "types": "./lib/scryfallClient.d.ts",
-  "homepage": "http://github.com/azure/azure-sdk-for-node",
+  "homepage": "https://github.com/azure/azure-sdk-for-node",
   "repository": {
     "type": "git",
     "url": "https://github.com/azure/azure-sdk-for-node.git"
   },
   "bugs": {
-    "url": "http://github.com/Azure/azure-sdk-for-node/issues"
+    "url": "https://github.com/azure/azure-sdk-for-node/issues"
   }
 }

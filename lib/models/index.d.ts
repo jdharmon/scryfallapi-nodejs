@@ -50,8 +50,7 @@ export interface ImageUri {
  * @member {string} [oracleText]
  * @member {string} [manaCost]
  * @member {array} [colors]
- * @member {string} [colorIndicator] Possible values include: 'W', 'U', 'B',
- * 'R', 'G'
+ * @member {array} [colorIndicator]
  * @member {string} [power]
  * @member {string} [toughness]
  * @member {string} [loyalty]
@@ -71,7 +70,7 @@ export interface CardFace {
   oracleText?: string;
   manaCost?: string;
   colors?: string[];
-  colorIndicator?: string;
+  colorIndicator?: string[];
   power?: string;
   toughness?: string;
   loyalty?: string;
@@ -84,18 +83,30 @@ export interface CardFace {
  * @class
  * Initializes a new instance of the Legality class.
  * @constructor
- * @member {string} [standard] Possible values include: 'legal', 'not_legal'
- * @member {string} [future] Possible values include: 'legal', 'not_legal'
- * @member {string} [frontier] Possible values include: 'legal', 'not_legal'
- * @member {string} [modern] Possible values include: 'legal', 'not_legal'
- * @member {string} [legacy] Possible values include: 'legal', 'not_legal'
- * @member {string} [pauper] Possible values include: 'legal', 'not_legal'
- * @member {string} [vintage] Possible values include: 'legal', 'not_legal'
- * @member {string} [penny] Possible values include: 'legal', 'not_legal'
- * @member {string} [commander] Possible values include: 'legal', 'not_legal'
- * @member {string} [onevOne] Possible values include: 'legal', 'not_legal'
- * @member {string} [duel] Possible values include: 'legal', 'not_legal'
- * @member {string} [brawl] Possible values include: 'legal', 'not_legal'
+ * @member {string} [standard] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [future] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [frontier] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [modern] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [legacy] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [pauper] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [vintage] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [penny] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [commander] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [onevOne] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [duel] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
+ * @member {string} [brawl] Possible values include: 'legal', 'not_legal',
+ * 'restricted', 'banned'
  */
 export interface Legality {
   standard?: string;
@@ -120,6 +131,7 @@ export interface Legality {
  * @member {uuid} [oracleId]
  * @member {array} [multiverseIds]
  * @member {number} [mtgoId]
+ * @member {number} [arenaId]
  * @member {number} [mtgoFoilId]
  * @member {string} [uri]
  * @member {string} [scryfallUri]
@@ -127,8 +139,8 @@ export interface Legality {
  * @member {string} [rulingsUri]
  * @member {string} [name]
  * @member {string} [layout] Possible values include: 'normal', 'split',
- * 'transform', 'meld', 'leveler', 'saga', 'planar', 'scheme', 'vanguard',
- * 'token', 'double_faced_token', 'emblem', 'augment', 'host'
+ * 'flip', 'transform', 'meld', 'leveler', 'saga', 'planar', 'scheme',
+ * 'vanguard', 'token', 'double_faced_token', 'emblem', 'augment', 'host'
  * @member {number} [cmc]
  * @member {string} [typeLine]
  * @member {string} [oracleText]
@@ -141,36 +153,33 @@ export interface Legality {
  * @member {array} [colors]
  * @member {array} [colorIndicator]
  * @member {array} [colorIdentity]
- * @member {object} [allParts]
- * @member {uuid} [allParts.id]
- * @member {string} [allParts.name]
- * @member {string} [allParts.uri]
+ * @member {array} [allParts]
  * @member {array} [cardFaces]
  * @member {object} [legalities]
  * @member {string} [legalities.standard] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.future] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.frontier] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.modern] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.legacy] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.pauper] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.vintage] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.penny] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.commander] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.onevOne] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.duel] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {string} [legalities.brawl] Possible values include: 'legal',
- * 'not_legal'
+ * 'not_legal', 'restricted', 'banned'
  * @member {boolean} [reserved]
  * @member {number} [edhrecRank]
  * @member {string} [set]
@@ -211,6 +220,7 @@ export interface Card {
   oracleId?: string;
   multiverseIds?: number[];
   mtgoId?: number;
+  arenaId?: number;
   mtgoFoilId?: number;
   uri?: string;
   scryfallUri?: string;
@@ -230,7 +240,7 @@ export interface Card {
   colors?: string[];
   colorIndicator?: string[];
   colorIdentity?: string[];
-  allParts?: RelatedCards;
+  allParts?: RelatedCards[];
   cardFaces?: CardFace[];
   legalities?: Legality;
   reserved?: boolean;

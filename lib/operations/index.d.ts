@@ -528,6 +528,57 @@ export interface Cards {
 
 
     /**
+     * @param {number} id
+     *
+     * @param {object} [options] Optional Parameters.
+     *
+     * @param {object} [options.customHeaders] Headers that will be added to the
+     * request
+     *
+     * @returns {Promise} A promise is returned
+     *
+     * @resolve {HttpOperationResponse<Card>} - The deserialized result object.
+     *
+     * @reject {Error|ServiceError} - The error object.
+     */
+    getByArenaIdWithHttpOperationResponse(id: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<HttpOperationResponse<models.Card>>;
+
+    /**
+     * @param {number} id
+     *
+     * @param {object} [options] Optional Parameters.
+     *
+     * @param {object} [options.customHeaders] Headers that will be added to the
+     * request
+     *
+     * @param {ServiceCallback} [optionalCallback] - The optional callback.
+     *
+     * @returns {ServiceCallback|Promise} If a callback was passed as the last
+     * parameter then it returns the callback else returns a Promise.
+     *
+     * {Promise} A promise is returned.
+     *
+     *                      @resolve {Card} - The deserialized result object.
+     *
+     *                      @reject {Error|ServiceError} - The error object.
+     *
+     * {ServiceCallback} optionalCallback(err, result, request, response)
+     *
+     *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
+     *
+     *                      {Card} [result]   - The deserialized result object if an error did not occur.
+     *                      See {@link Card} for more information.
+     *
+     *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
+     *
+     *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
+     */
+    getByArenaId(id: number, options?: { customHeaders? : { [headerName: string]: string; } }): Promise<models.Card>;
+    getByArenaId(id: number, callback: ServiceCallback<models.Card>): void;
+    getByArenaId(id: number, options: { customHeaders? : { [headerName: string]: string; } }, callback: ServiceCallback<models.Card>): void;
+
+
+    /**
      * @param {string} code
      *
      * @param {number} number
