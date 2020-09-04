@@ -125,57 +125,6 @@ export interface Cards {
 
 
     /**
-     * @param {object} [options] Optional Parameters.
-     *
-     * @param {number} [options.page]
-     *
-     * @param {object} [options.customHeaders] Headers that will be added to the
-     * request
-     *
-     * @returns {Promise} A promise is returned
-     *
-     * @resolve {HttpOperationResponse<CardList>} - The deserialized result object.
-     *
-     * @reject {Error|ServiceError} - The error object.
-     */
-    getAllWithHttpOperationResponse(options?: { page? : number, customHeaders? : { [headerName: string]: string; } }): Promise<HttpOperationResponse<models.CardList>>;
-
-    /**
-     * @param {object} [options] Optional Parameters.
-     *
-     * @param {number} [options.page]
-     *
-     * @param {object} [options.customHeaders] Headers that will be added to the
-     * request
-     *
-     * @param {ServiceCallback} [optionalCallback] - The optional callback.
-     *
-     * @returns {ServiceCallback|Promise} If a callback was passed as the last
-     * parameter then it returns the callback else returns a Promise.
-     *
-     * {Promise} A promise is returned.
-     *
-     *                      @resolve {CardList} - The deserialized result object.
-     *
-     *                      @reject {Error|ServiceError} - The error object.
-     *
-     * {ServiceCallback} optionalCallback(err, result, request, response)
-     *
-     *                      {Error|ServiceError}  err        - The Error object if an error occurred, null otherwise.
-     *
-     *                      {CardList} [result]   - The deserialized result object if an error did not occur.
-     *                      See {@link CardList} for more information.
-     *
-     *                      {WebResource} [request]  - The HTTP Request object if an error did not occur.
-     *
-     *                      {http.IncomingMessage} [response] - The HTTP Response stream if an error did not occur.
-     */
-    getAll(options?: { page? : number, customHeaders? : { [headerName: string]: string; } }): Promise<models.CardList>;
-    getAll(callback: ServiceCallback<models.CardList>): void;
-    getAll(options: { page? : number, customHeaders? : { [headerName: string]: string; } }, callback: ServiceCallback<models.CardList>): void;
-
-
-    /**
      * @param {string} q
      *
      * @param {object} [options] Optional Parameters.
